@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wingopedia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif; /* Changed to Roboto for a modern look */
+            line-height: 1.6;
+            background-color: #eceff1; /* Light grey background to complement the theme */
+            color: #263238; /* Dark grey font color for better readability */
+        }
+
+        header {
+            background: #ff6f61; /* Vibrant coral color for the header */
+            color: #ffffff; /* White font color for contrast */
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            color: #ffffff; /* White font color for the header title */
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px 0;
+        }
+
+        header nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #ffeb3b; /* Bright yellow hover color for links */
+        }
+
+        .hero {
+            background: url(images/wingopedia.jpg) no-repeat center center / cover;
+            color: #ffffff;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero .cta {
+            padding: 10px 20px;
+            background: #ff6f61;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .services, .blog-section, .branches {
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            background-color: #ffffff; /* White background for content sections */
+            flex-wrap: wrap;
+        }
+
+        .service-item, .blog-item, .branch-item {
+            background-color: #263238; /* Dark grey background for service, blog, and branch items */
+            padding: 20px;
+            flex-basis: 30%;
+            margin: 10px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        /* Image size adjustments */
+        .service-item img, .blog-item img, .branch-item img {
+            width: 100%; /* Adjust to fit the container */
+            height: auto; /* Maintain aspect ratio */
+            max-width: 450px; /* Max width for the largest images */
+            max-height: 400px; /* Max height for the largest images */
+        }
+
+        .service-item h3, .blog-item h3, .branch-item h3 {
+            color: #ff6f61; /* Coral color for headers to match the theme */
+            margin-bottom: 10px;
+        }
+
+        .service-item p, .blog-item p, .branch-item p {
+            color: #ffffff; /* White font color for better contrast against dark backgrounds */
+            margin-bottom: 15px;
+        }
+
+        .service-item .cta, .blog-item .cta, .branch-item .cta {
+            background-color: #ff6f61;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .service-item:hover, .blog-item:hover, .branch-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .call-to-action {
+            background-color: #ff6f61;
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .call-to-action h2 {
+            margin-bottom: 10px;
+        }
+
+        .call-to-action a {
+            color: #263238;
+            padding: 10px 20px;
+            background: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #263238;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer .footer-columns {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px 0;
+        }
+
+        footer .footer-column {
+            flex-basis: 30%;
+            margin: 10px;
+            text-align: left;
+        }
+
+        footer h3 {
+            margin-bottom: 10px;
+            color: #ff6f61;
+        }
+
+        footer p, footer a {
+            color: #ffffff;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .service-item, .blog-item, .branch-item, .footer-column {
+                flex-basis: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header nav ul {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Wingopedia</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#jets">Jets</a></li>
+                <li><a href="#commercial">Commercial</a></li>
+                <li><a href="#aboutus">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div>
+            <h1>Welcome to Wingopedia!</h1>
+            <p>Your ultimate destination for the latest airplanes and aviation technology</p>
+        </div>
+    </section>
+
+    <section class="services" id="jets">
+        <div class="service-item">
+            <img src="images/private_jet.jpg" alt="Private Jets">
+            <h3>Private Jets</h3>
+            <p>Explore our collection of luxurious private jets, offering unmatched comfort and speed for your personal travels.</p>
+            <a href="#" class="cta">View More</a>
+        </div>
+        <div class="service-item">
+            <img src="images/fighter_jet.jpg" alt="Fighter Jets">
+            <h3>Fighter Jets</h3>
+            <p>Discover state-of-the-art fighter jets, equipped with the latest in aviation technology for superior performance.</p>
+            <a href="#" class="cta">View More</a>
+        </div>
+        <div class="service-item">
+            <img src="images/cargo_plane.jpg" alt="Cargo Planes">
+            <h3>Cargo Planes</h3>
+            <p>Explore our extensive collection of cargo planes, designed to transport goods efficiently across the globe.</p>
+            <a href="#" class="cta">View More</a>
+        </div>
+        <div class="service-item">
+            <img src="images/commercial_airliners.jpg" alt="Commercial Airliners">
+            <h3>Commercial Airliners</h3>
+            <p>Discover top-branded commercial airliners. From economy to luxury, find the perfect aircraft for your fleet.</p>
+            <a href="#" class="cta">View More</a>
+        </div>
+
+        <div class="service-item">
+            <img src="images/helicopter.jpg" alt="Helicopters">
+            <h3>Helicopters</h3>
+            <p>Discover our collection of helicopters, offering versatility for various missions, from rescue to transport.</p>
+            <a href="#" class="cta">View More</a>
+        </div>
+    </section>
+
+    <h1 align="center" id="commercial">POPULAR AIRPORTS</h1>
+    <section class="blog-section">
+        <div class="blog-item">
+            <img src="images/SINGAPORE.jpg" alt="singapore airport">
+            <h3>Singapore Changi Airport (SIN) </h3>
+            <p>Known for its stunning architecture, lush indoor gardens, and unique features like the Jewel complex with the world's tallest indoor waterfall, Changi Airport is often cited as one of the most beautiful and passenger-friendly airports globally.</p>
+            <a href="#" class="cta">Read More</a>
+        </div>
+        <div class="blog-item">
+            <img src="images/hamad.jpg" alt="Boeing 787">
+            <h3>Hamad International Airport, Doha, Qatar (DOH) </h3>
+            <p>This airport is renowned for its modern design, luxurious amenities, and art installations, including the famous giant teddy bear sculpture by Urs Fischer.</p>
+            <a href="#" class="cta">Read More</a>
+        </div>
+    </section>
+
+    <section class="call-to-action">
+        <h2>Join Our Wingopedia Community!</h2>
+        <p>Stay updated with our latest info and aviation news.</p><br>
+        <a href="#">Subscribe Now</a>
+    </section>
+
+    <footer>
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h3 id="aboutus">About Us</h3>
+                <p>Wingopedia is your go-to platform for all things about aviation. We provide the latest information about aviation to keep you updated</p>
+            </div>
+            <div class="footer-column" id="contact">
+                <h3>Customer Service</h3>
+                <p><a href="#">Contact Us</a></p>
+                <p><a href="#">Returns</a></p>
+                <p><a href="#">Privacy Policy</a></p>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <p><a href="#">Facebook</a></p>
+                <p><a href="#">Twitter</a></p>
+                <p><a href="#">Instagram</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
